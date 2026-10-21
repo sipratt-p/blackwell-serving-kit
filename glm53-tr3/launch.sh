@@ -1,5 +1,7 @@
 #!/bin/bash
 # GLM-5.3-Flash-tr3-4bpw on 2x RTX PRO 6000 — adaptation of brandonmusic's serve-glm53-sm120-tp2.sh (v75 image).
+# Original by Local Inference Lab, Inc. (published by Brandon M. Music): https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw
+# Project home: https://local-inference-lab.ai/ . Licence: Local Inference Lab Attribution License 1.0, see LICENSE-upstream.
 # Differences from upstream defaults (why):
 #   CACHE=fp8_ds_mla  → FLASHINFER_MLA_SPARSE_SM120 instead of B12X_MLA_SPARSE (Xid 31 crashes on DSV4 with that backend)
 #   MAX_MODEL_LEN=131072 / MAX_NUM_SEQS=4 → multi-agent use instead of the author's 500K single-seq profile

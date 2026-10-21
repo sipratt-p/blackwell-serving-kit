@@ -2,9 +2,9 @@
 
 Weights: `brandonmusic/GLM-5.3-Flash-tr3-4bpw` (176 GB; routed experts EXL3/TR3 4-bit, attention in the
 official FP8). Runtime: the author's closed vLLM fork image
-`verdictai/glm53-flash-exl3-k4:r19-sm120-tp2-ep2-v75` (B12X lineage, not stock vLLM). Author docs:
-https://github.com/brandonmmusic-max/glm-5.3-flash-exl3-4bpw. `launch.sh` is our adaptation of his
-`serve-glm53-sm120-tp2.sh`.
+`verdictai/glm53-flash-exl3-k4:r19-sm120-tp2-ep2-v75` (B12X lineage, not stock vLLM). Author: Local Inference Lab, Inc. (published by Brandon M. Music); author docs and scripts:
+https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw (project home: https://local-inference-lab.ai/). `launch.sh` is our adaptation of their
+`serve-glm53-sm120-tp2.sh`; licence text in `LICENSE-upstream`.
 
 ## Sequence
 

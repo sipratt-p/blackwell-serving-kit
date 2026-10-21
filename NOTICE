@@ -33,8 +33,12 @@ patches/qwen38fn_ple_layer.py
   VLLM_PLE_FORCE_FP8 branch, by Seth Pratt's lab (see patches/README.md).
 
 glm53-tr3/launch.sh
-  A launch adaptation of the GLM-5.3-Flash TR3 author's serving script; credited in glm53-tr3/README.md.
-  The runtime image and weights are not redistributed here.
+  Adapted from serve-glm53-sm120-tp2.sh by Local Inference Lab, Inc. (published by Brandon M. Music).
+  Upstream source: https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw
+  Project home:    https://local-inference-lab.ai/
+  Licence: Local Inference Lab Attribution License 1.0 (text in glm53-tr3/LICENSE-upstream); the script
+  carried MIT terms when this adaptation was made on 2026-08-27. The runtime image and weights are not
+  redistributed here.
 
 scripts/serve_minimax_m3_reap50_UNVALIDATED.sh
   Recipe adapted from https://huggingface.co/ressl/MiniMax-M3-uncensored-NVFP4. The two SGLang patch files

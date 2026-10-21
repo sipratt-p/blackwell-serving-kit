@@ -100,6 +100,6 @@ the image was built that way (`exec docker run --rm`); detach with `tmux` or `&`
 
 MIT, except `patches/qwen38fn_ple_layer.py`, which is a modified vLLM file under Apache-2.0 (licence text in
 [`patches/LICENSE-vLLM`](patches/LICENSE-vLLM)), and `glm53-tr3/bench_speed.py`, which is adapted from hikari's
-MIT-licensed `bench_mtp.py` (notice in [`NOTICE`](NOTICE)). The GLM-5.3 TR3 runtime image and weights belong to
-their author under his own source-available license; `glm53-tr3/launch.sh` is a launch adaptation, not a
-redistribution.
+MIT-licensed `bench_mtp.py` (notice in [`NOTICE`](NOTICE)), and `glm53-tr3/launch.sh` (below).
+
+`glm53-tr3/launch.sh` is adapted from `serve-glm53-sm120-tp2.sh` by **Local Inference Lab, Inc.** (published by Brandon M. Music), from [brandonmusic/GLM-5.3-Flash-tr3-4bpw](https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw) (https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw); project home [local-inference-lab.ai](https://local-inference-lab.ai/) (https://local-inference-lab.ai/). That work is now licensed under the Local Inference Lab Attribution License 1.0 (it carried MIT terms when this adaptation was made, on 2026-08-27); the licence text is in [`glm53-tr3/LICENSE-upstream`](glm53-tr3/LICENSE-upstream). The runtime image and weights are theirs and are not redistributed here.
