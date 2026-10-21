@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Adapted from bench_mtp.py in hikari's dsv4-flash-nvfp4-sm120
+# (https://github.com/hikarioyama/dsv4-flash-nvfp4-sm120), MIT, Copyright (c) 2026 hikari; see NOTICE.
+# Changes by Seth Pratt's lab: the MODEL id and the default --port.
 """DSv4-Flash MTP on/off throughput benchmark.
 
 Measures:

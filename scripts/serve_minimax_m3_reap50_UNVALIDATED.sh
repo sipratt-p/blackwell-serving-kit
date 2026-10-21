@@ -1,7 +1,7 @@
 #!/bin/bash
 # MiniMax-M3 NVFP4 REAP50 (sparkarena/Minimax-M3-v0-NVFP4-REAP50, 129 GB) on 2x RTX PRO 6000, SGLang.
 # STATUS: STAGED, NOT YET LAUNCHED on this hardware. Kept because the pinning decisions are the useful part.
-# Recipe adapted from ressl/MiniMax-M3-uncensored-NVFP4 (validated on 4x RTX PRO 6000 Blackwell, TP4):
+# Recipe adapted from ressl/MiniMax-M3-uncensored-NVFP4 (https://huggingface.co/ressl/MiniMax-M3-uncensored-NVFP4; validated on 4x RTX PRO 6000 Blackwell, TP4):
 # same pinned SGLang image, same two clamped-SwiGLU patches, TP2 here because REAP50 fits 2 cards.
 # Needs BOTH GPUs free. The two sglang_patch files come from the ressl recipe and ship with that model repo.
 set -euo pipefail

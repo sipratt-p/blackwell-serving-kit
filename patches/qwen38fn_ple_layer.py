@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+# Modified by Seth Pratt's lab, 2026-09-03: the VLLM_PLE_FORCE_FP8 branch (see patches/README.md).
 """GPU-resident Qwen3.8-Flash-Next position-learning enhancement layers."""
 
 import math

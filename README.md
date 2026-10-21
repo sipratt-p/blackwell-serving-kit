@@ -16,7 +16,7 @@ repository is the map.
 |---|---|---|---|---|---|---|
 | Qwen3.8-Flash-Next (125B/6B active MoE + 51B n-gram table) | FP8, vLLM `qwen38-flash-next` image, TP2, table offloaded to host RAM, MTP nst=4 | 2 | **233.8 t/s** (113.9 without MTP) | 1,712 t/s @16 | agentic hard suite mean 380/400, MTP quality-neutral | `scripts/qwen38-flash-next-fp8-tp2.sh`, `docs/qwen38-flash-next-notes.md` |
 | Qwen3.8-Flash-Next, single GPU | NVFP4 W4A4, same image + `patches/`, table offloaded | 1 | 90.6 t/s | 496 t/s @16 | mean 300/400 | `scripts/qwen38-flash-next-nvfp4-1gpu.sh` |
-| DeepSeek-V4-Flash (284B/13B active) | NVFP4 + B12X vLLM build with working MTP; FP8 + DSpark build | 2 | 108.8 to 150.6 t/s (MTP, +38%); 182 to 186 t/s (FP8 DSpark) | 201 t/s @4 | 459/500 direct | separate repo: [dsv4-flash-nvfp4-sm120](https://github.com/sipratt-p/dsv4-flash-nvfp4-sm120) |
+| DeepSeek-V4-Flash (284B/13B active) | NVFP4 + B12X vLLM build with working MTP; FP8 + DSpark build | 2 | 108.8 to 150.6 t/s (MTP, +38%; hikari's measurement, see the dsv4-flash-nvfp4-sm120 Credits); 182 to 186 t/s (FP8 DSpark on Fraser Price's recipe, measured here) | 201 t/s @4 | 459/500 direct | separate repo: [dsv4-flash-nvfp4-sm120](https://github.com/sipratt-p/dsv4-flash-nvfp4-sm120) |
 | Ornith-1.5-35B-A3B | bf16, stock vLLM | 1 | 179.5 t/s | **3,444 t/s @128**, not saturated | **489/500** direct, best measured | `scripts/serve_ornith35b.sh` |
 | Ornith-1.5-397B (A15B) | NVFP4, vLLM TP2 + selective UVA expert offload (120 GB pinned RAM) | 2 | 10.9 t/s | 12.5 t/s @4 (PCIe-bound) | overnight-batch class | `scripts/serve_ornith397b_nvfp4_offload.sh` |
 | GLM-5.3-Flash (320B/18B active) | TR3-4bpw experts + FP8 attention, author's closed vLLM fork | 2 | 108 to 117 t/s | 105 to 185 t/s @4 | mean 372/400 with an 8K thinking budget, 4/100 without | `glm53-tr3/` |
@@ -98,6 +98,8 @@ the image was built that way (`exec docker run --rm`); detach with `tmux` or `&`
 
 ## License
 
-MIT, except `patches/qwen38fn_ple_layer.py`, which is a modified vLLM file under Apache-2.0. The GLM-5.3 TR3
-runtime image and weights belong to their author under his own source-available license; `glm53-tr3/launch.sh`
-is a launch adaptation, not a redistribution.
+MIT, except `patches/qwen38fn_ple_layer.py`, which is a modified vLLM file under Apache-2.0 (licence text in
+[`patches/LICENSE-vLLM`](patches/LICENSE-vLLM)), and `glm53-tr3/bench_speed.py`, which is adapted from hikari's
+MIT-licensed `bench_mtp.py` (notice in [`NOTICE`](NOTICE)). The GLM-5.3 TR3 runtime image and weights belong to
+their author under his own source-available license; `glm53-tr3/launch.sh` is a launch adaptation, not a
+redistribution.
